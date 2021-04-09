@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         'Pass': this.pass
       });
 
-
+      //todo bien
       con.subscribe((res:Usuario) => {
         if (res != null) {
           localStorage.setItem("Usuario", JSON.stringify(res))
