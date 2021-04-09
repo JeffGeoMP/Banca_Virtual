@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-5 d-none d-lg-block bg-login-image">
+                            <img src="https://raw.githubusercontent.com/Stevensis/-MIA-Proyecto2_201706357/main/Apicacion/client/src/assets/img/foto.jpg"
+                                class="img-fluid" alt="Responsive image">
+                        </div>
+
+                        <div class="col-lg-7 g-5">
+                            <div class="p7">
+                                <div align="center">
+                                    <h2>Iniciar Sesion</h2>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="input-group mb-5">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input [(ngModel)]="usuario" type="text" name="" class="form-control input_user" value="" placeholder="username">
+                                    </div>
+
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        </div>
+                                        <input [(ngModel)]="pass" type="password" name="" class="form-control input_pass" value="" placeholder="password">
+                                    </div>
+
+                                    <div class="p-5">
+                                        <button class="w-100 btn btn-primary btn-lg" (click)="login()">Crear</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
