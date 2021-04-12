@@ -14,4 +14,16 @@ export class ConectionService {
     let url = `${this.dir}/login`;
     return this.http.post(url, data);
   }
+
+  ConsultarSaldo(User:String){
+    let url1 = 'http://localhost:3000/usuario/saldo/'+User;
+    console.log(url1);
+    if(this.http.get(url1)){
+      console.log("si");
+    }else{
+      console.log("no");
+    }
+    return this.http.get(url1);
+}
+
 }
