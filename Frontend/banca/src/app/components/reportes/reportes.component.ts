@@ -18,7 +18,7 @@ export class ReportesComponent implements OnInit {
   constructor(private conectionService: ConectionService) { }
 
   ngOnInit(): void {
-    //this.iniciar_variables();
+    this.iniciar_variables();
     this.obtener_transacciones();
   }
 
