@@ -8,12 +8,14 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    ReportesComponent
   ],
   imports: [
     BrowserModule,
