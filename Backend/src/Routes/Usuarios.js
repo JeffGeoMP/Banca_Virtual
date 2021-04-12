@@ -31,5 +31,33 @@ app.post('/login', async (req, res) => {
 	}
 });
 
+app.post('/actualizaremisor',async (req,res) => {
+	try {
+		db.query(Consulta.actualizarsaldoemisor(req.body.id,Number(req.body.monto)),(err,data)=>{
+			console.log(err);
+			if (err) {
+				res.status(200).json(null);
+			} else{
+				res.status(200).json({"msg":"true"})
+			}
+		})
+	} catch (error){
+		res.send(null);
+	}
+});
+
+app.post('/actualizareceptor',async (req,res) => {
+	try {
+		db.query(Consulta.actualizarsaldoreceptor(req.body.id,Number(req.body.monto)),(err,data)=>{
+			if (err) {
+				res.status(200).json(null);
+			} else{
+				res.status(200).json({"msg":"true"})
+			}
+		})
+	} catch (error){
+		res.send(null);
+	}
+});
 
 module.exports = app;

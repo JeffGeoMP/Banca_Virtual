@@ -1,0 +1,30 @@
+<div class="container mt-10">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="../../../assets/Transferencia-bancaria.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Datos Emisor
+                                <br>
+                                <label for="cuentaemisorinput" class="form-label">Nombre: {{this.user[0].nombres}} </label>
+                                <br>
+                                <label for="cuentaemisorinput" class="form-label">No. Cuenta: {{this.user[0].id_cuenta}} </label>
+                            </li>
+                            <li class="list-group-item">Datos Receptor
+                                <br>
+                                <label for="montoinput" class="form-label">Monto</label>
+                                <input type="text" [(ngModel)]="montoemisor" name="montoemisor" class="form-control" placeholder="0.00">
+                                <label for="cuentainput" class="form-label">No. Cuenta</label>
+                                <input type="text" [(ngModel)]="cuentaemisor" name="cuentaemisor" class="form-control" placeholder="0000">    
+                            </li>
+                          </ul>
+                          <button type="button" (click)="transfer()" class="btn btn-success">Enviar</button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

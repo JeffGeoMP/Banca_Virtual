@@ -2,7 +2,7 @@ CREATE DATABASE Practica3y4;
 
 
 CREATE TABLE Usuario(
-id_cuenta INT NOT NULL,
+id_cuenta serial,
 nombres VARCHAR(100) NOT NULL,
 apellidos VARCHAR(100) NOT NULL,
 dpi BIGINT NOT NULL,

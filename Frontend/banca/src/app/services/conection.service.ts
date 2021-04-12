@@ -14,4 +14,14 @@ export class ConectionService {
     let url = `${this.dir}/login`;
     return this.http.post(url, data);
   }
+
+  actualizaremisor(data){
+    let url = `${this.dir}/actualizaremisor`
+    return this.http.post(url,data);
+  }
+
+  actualizareceptor(data){
+    let url = `${this.dir}/actualizareceptor`
+    return this.http.post(url,data);
+  }
 }
