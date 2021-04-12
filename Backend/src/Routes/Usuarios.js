@@ -31,33 +31,36 @@ app.post('/login', async (req, res) => {
 	}
 });
 
-app.post('/actualizaremisor',async (req,res) => {
+app.post('/transferencia',async (req,res) => {
 	try {
-		db.query(Consulta.actualizarsaldoemisor(req.body.id,Number(req.body.monto)),(err,data)=>{
-			console.log(err);
+		let datos = req.body;
+		var moment = require('moment')
+		var created = moment().format('YYYY-MM-DD hh:mm:ss');
+		db.query(Consulta.inserttransfer(created,Number(datos.monto),datos.id_emisor,Number(datos.id_receptor)),(err,data)=>{
 			if (err) {
 				res.status(200).json(null);
 			} else{
-				res.status(200).json({"msg":"true"})
+				db.query(Consulta.actualizarsaldoemisor(datos.id_emisor,Number(datos.monto)),(err,data)=>{
+					if (err) {
+						res.status(200).json(null);
+					} else{
+						db.query(Consulta.actualizarsaldoreceptor(Number(datos.id_receptor),Number(datos.monto)),(err,data)=>{
+							if (err) {
+								res.status(200).json(null);
+							} else{
+								res.status(200).json({"msg":"true"});
+							}
+						});
+					}
+				});
 			}
-		})
+		});
+
 	} catch (error){
 		res.send(null);
 	}
 });
 
-app.post('/actualizareceptor',async (req,res) => {
-	try {
-		db.query(Consulta.actualizarsaldoreceptor(req.body.id,Number(req.body.monto)),(err,data)=>{
-			if (err) {
-				res.status(200).json(null);
-			} else{
-				res.status(200).json({"msg":"true"})
-			}
-		})
-	} catch (error){
-		res.send(null);
-	}
-});
+
 
 module.exports = app;

@@ -12,7 +12,8 @@ export class TransferenciaComponent implements OnInit {
   usuario:string;
   idusuario:string;
   montoemisor:number;
-  cuentaemisor:number;
+  cuentareceptor:number;
+  fechaactual;
 
 
   constructor(private conexion: ConectionService) { 
@@ -20,37 +21,29 @@ export class TransferenciaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user = JSON.parse(localStorage.getItem('Usuario'))
-    console.log(this.user)
+    this.user = JSON.parse(localStorage.getItem('Usuario'));
+    this.fechaactual = new Date();
+    console.log(this.fechaactual);
   }
 
   transfer(){
-    if(this.user[0].id_cuenta == this.cuentaemisor){
+    console.log(this.cuentareceptor)
+    if(this.user[0].id_cuenta == this.cuentareceptor){
       alert("No se permite envios a la misma cuenta");
     }else if (this.montoemisor <= 0 ) {
       alert("El monto a transferir debe ser mayor a 0")
-    }else if (this.cuentaemisor = 0){
+    }else if (this.cuentareceptor== 0){
       alert("El numero de cuenta es invalido")
     }else {
-      let con1 = this.conexion.actualizaremisor({
-        'id':this.user[0].id_cuenta,
+      let con = this.conexion.transferencia({
+        'fecha': this.fechaactual,
+        'id_emisor':this.user[0].id_cuenta,
+        'id_receptor':this.cuentareceptor,
         'monto':this.montoemisor
       });
-
-      let con2 = this.conexion.actualizareceptor({
-        'id':this.cuentaemisor,
-        'monto':this.montoemisor
-      });
-
-      con1.subscribe((res)=>{
-        if(res != null){
-          alert("Transferencia exitosa");
-        }else{
-          alert("Transferencia fallida");
-        }
-      });
-
-      con2.subscribe((res)=>{
+      console.log(this.cuentareceptor)
+      con.subscribe((res)=>{
+        console.log(res);
         if(res != null){
           alert("Transferencia exitosa");
         }else{
@@ -61,9 +54,9 @@ export class TransferenciaComponent implements OnInit {
     console.log(this.user[0].id_cuenta)
     console.log(this.user[0].saldo)
     console.log(this.montoemisor)
-    console.log(this.cuentaemisor)
+    
     this.montoemisor=0.00;
-    this.cuentaemisor=0;
+    this.cuentareceptor=0;
 
   }
 

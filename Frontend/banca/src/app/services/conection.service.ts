@@ -15,13 +15,9 @@ export class ConectionService {
     return this.http.post(url, data);
   }
 
-  actualizaremisor(data){
-    let url = `${this.dir}/actualizaremisor`
+  transferencia(data){
+    let url = `${this.dir}/transferencia`
     return this.http.post(url,data);
   }
 
-  actualizareceptor(data){
-    let url = `${this.dir}/actualizareceptor`
-    return this.http.post(url,data);
-  }
 }
