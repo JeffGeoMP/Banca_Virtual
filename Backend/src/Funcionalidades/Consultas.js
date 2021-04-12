@@ -1,9 +1,17 @@
-
 class Consultas{
     constructor(){ }
 
     VerificarUsuario(id, pass){
         return `SELECT * FROM Usuario U WHERE U.id_cuenta = '${id}' AND U.pass = '${pass}';`;
+    }
+
+    transacciones(id){
+        return `SELECT id_transferencia, fecha, monto, nombres, apellidos FROM transferencia
+        INNER JOIN (
+            SELECT id_cuenta, nombres, apellidos FROM usuario
+        ) as X
+        ON id_receptor = X.id_cuenta
+        WHERE id_emisor = ${id};`
     }
 
 }

@@ -1,1 +1,39 @@
-<p>reportes works!</p>
+<div class="container uprow">
+    <div class="row">
+        <div class="col">
+            <h1>Historial de transacciones</h1>
+        </div>
+        <div class="col">
+            <h1>
+                <button type="button" class="btn btn-outline-danger" (click)="downloadPDF()"> Descargar </button>
+            </h1>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col uprow">
+            <div id="data">
+                <table class="table table-bordered border-danger">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Transacción</th>
+                        <th scope="col">Receptor</th>
+                        <th scope="col">Monto</th>
+                        <th scope="col">Fecha</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let transaccion of transacciones; index as i; ">
+                        <th scope="row"> {{i+1}} </th>
+                        <td> {{transaccion.id_transferencia}} </td>
+                        <td> {{transaccion.nombres}}  {{transaccion.apellidos}} </td>
+                        <td>Q. {{transaccion.monto}} </td>
+                        <td> {{transaccion.fecha.split("T")[0] }} </td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -8,7 +8,7 @@ const routes: Routes = [
     path: 'Login',
     component: LoginComponent
   },
-  { path: 'reportes/:id', component: ReportesComponent},
+  { path: 'reportes', component: ReportesComponent},
   {
     path: '**',
     pathMatch: 'full',
