@@ -31,5 +31,19 @@ app.post('/login', async (req, res) => {
 	}
 });
 
+app.get('/transacciones/:id', async(req, res)=>{
+	try {
+		db.query(Consulta.transacciones(req.params.id), (err, data) => {
+			if (err) {
+				res.status(200).json(null);
+			} else {
+				res.status(200).json(data.rows);
+			}
+		});
+	} catch (error) {
+		console.log(error);
+        res.status(500).send(error);
+	}
+});
 
 module.exports = app;

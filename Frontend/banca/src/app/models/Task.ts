@@ -8,6 +8,12 @@ export interface Usuario{
     pass:String;
 }
 
-
+export interface Transaccion{
+    id_transferencia: Number,
+    fecha: String,
+    monto: Number,
+    nombres: String,
+    apellidos: String,
+}
 
 
