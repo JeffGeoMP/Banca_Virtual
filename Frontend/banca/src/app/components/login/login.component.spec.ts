@@ -95,16 +95,17 @@ describe('LoginComponent', () => {
       })
   );
 
-  it('Data retornada de db es null - 3',
+  it('Data retornada de db es null - 4',
     inject([HttpTestingController, ConectionService],
       (httpMock: HttpTestingController, service: ConectionService) => {
         service.loginUsuario({id_cuenta:1234, pass:"1234"}).subscribe(data => {
-         expect(data).toBe(null);
+          let aux = data as Usuario;
+          expect(aux).toEqual(null);
         });
 
         const req = httpMock.expectOne('http://localhost:3000/login');
         expect(req.request.method).toEqual('POST');
-        req.flush({ "pass": "1234", "id_cuenta": -1 });
+        req.flush(null);
       })
   );
 

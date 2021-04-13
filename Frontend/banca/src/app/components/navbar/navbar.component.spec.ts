@@ -22,12 +22,21 @@ describe('NavbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create - 0', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Validar empty en dato usuario - 1', () => {
-    component.usuario = "123"
+  it('Validar deslogeo - 1', () => {
     expect(component.logout()).toBeUndefined();
+  });
+
+  it('Validar usuario esta logeado - 2', () => {
+    component.usuario = true;
+    expect(component.usuario).toBe(true);
+  });
+
+  it('Validar usuario no esta logeado - 3', () => {
+    component.usuario = false;
+    expect(component.usuario).toBe(false);
   });
 });
