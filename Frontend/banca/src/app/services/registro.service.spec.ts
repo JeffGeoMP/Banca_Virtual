@@ -30,6 +30,7 @@ describe('RegistroService', () => {
       correo:'mario@gmail.com',
       contrasenia:"45fds"
     };
+    
     expect(service.EnviarRegistro(reg).subscribe(
       result=>{
           expect(result).toBeUndefined();
