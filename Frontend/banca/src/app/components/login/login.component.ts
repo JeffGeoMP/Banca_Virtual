@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
     if (this.usuario == "" || this.pass == "") {
       alert("Datos vacios");
     } else {
