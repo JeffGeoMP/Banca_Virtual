@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { ConectionService } from 'src/app/services/conection.service';
+import { Usuario} from "src/app/models/Task";
 
 @Component({
   selector: 'app-transferencia',
@@ -8,12 +9,10 @@ import { ConectionService } from 'src/app/services/conection.service';
   styleUrls: ['./transferencia.component.css']
 })
 export class TransferenciaComponent implements OnInit {
-  user;
-  usuario:string;
-  idusuario:string;
-  montoemisor:number;
-  cuentareceptor:number;
-  fechaactual;
+  id_usuarioemisor:Number = 2;
+  nombreemisor:String = "Alan";
+  montoemisor:Number = 0;
+  cuentareceptor:Number = 0;
 
 
   constructor(private conexion: ConectionService) { 
@@ -21,43 +20,31 @@ export class TransferenciaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user = JSON.parse(localStorage.getItem('Usuario'));
-    this.fechaactual = new Date();
-    console.log(this.fechaactual);
+    this.obtener_usuario();
   }
 
   transfer(){
-    console.log(this.cuentareceptor)
-    if(this.user[0].id_cuenta == this.cuentareceptor){
-      alert("No se permite envios a la misma cuenta");
-    }else if (this.montoemisor <= 0 ) {
-      alert("El monto a transferir debe ser mayor a 0")
-    }else if (this.cuentareceptor== 0){
-      alert("El numero de cuenta es invalido")
-    }else {
-      let con = this.conexion.transferencia({
-        'fecha': this.fechaactual,
-        'id_emisor':this.user[0].id_cuenta,
-        'id_receptor':this.cuentareceptor,
-        'monto':this.montoemisor
-      });
-      console.log(this.cuentareceptor)
-      con.subscribe((res)=>{
-        console.log(res);
-        if(res != null){
-          alert("Transferencia exitosa");
-        }else{
-          alert("Transferencia fallida");
-        }
-      });
-    }
-    console.log(this.user[0].id_cuenta)
-    console.log(this.user[0].saldo)
-    console.log(this.montoemisor)
-    
-    this.montoemisor=0.00;
-    this.cuentareceptor=0;
+    let con = this.conexion.transferencia({
+      'fecha': '00/00/0000',
+      'id_emisor':this.id_usuarioemisor,
+      'id_receptor':this.cuentareceptor,
+      'monto':this.montoemisor
+    });
+    //console.log(this.cuentareceptor)
+    con.subscribe((res)=>{
+      //console.log(res);
+      if(res != null){
+        alert("Transferencia exitosa");
+      }else{
+        alert("Transferencia fallida");
+      }
+    });
+  }
 
+  obtener_usuario(){
+    let result:Usuario = JSON.parse(localStorage.getItem('Usuario'));
+    this.id_usuarioemisor = result.id_cuenta;
+    this.nombreemisor = result.nombres;
   }
 
 }

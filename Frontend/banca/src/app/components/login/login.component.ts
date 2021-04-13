@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       //todo bien
       con.subscribe((res:Usuario) => {
         if (res != null) {
-          localStorage.setItem("Usuario", JSON.stringify(res))
+          localStorage.setItem("Usuario", JSON.stringify(res[0]))
           alert("Datos correctos");
           this.router.navigate(['/']);
         } else {
