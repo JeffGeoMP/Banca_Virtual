@@ -43,9 +43,9 @@ app.post('/registro', async (req, res) => {
 		let contrasenia=req.body.contrasenia;
 		db.query(Consulta.Registrar(nombre,apellido,dpi,cuenta,saldo,correo,contrasenia), (err, data) => {
 			if (err) {
-				res.status(200).json(null);
+				res.status(200).json({error:err});
 			} else {
-				res.status(200).json({codigo:123});
+				res.status(200).json({codigo:"193"+cuenta+"578911"});
 			}
 		});
 		
@@ -56,7 +56,7 @@ app.post('/registro', async (req, res) => {
 			res.status(400).json();
 		}*/
 	} catch (error) {
-		res.send(null);
+		res.send({error:error});
 	}
 });
 

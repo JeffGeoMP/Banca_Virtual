@@ -6,11 +6,11 @@ import { RegistroService } from 'src/app/services/registro.service';
 import {Registro  } from "../../models/Task";
 
 import { of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 class mockRegistro extends RegistroService {
 
-  EnviarRegistro(data) {
+  EnviarRegistro(data:Registro) {
 
     return of({ "codigo":123 });
   }
@@ -24,7 +24,11 @@ describe('RegistroComponent', () => {
   let fixture: ComponentFixture<RegistroComponent>;
   let reg:Registro;
   let reg2:Registro;
+
   let service: RegistroService;
+  let mockService: mockRegistro;
+  let http: HttpClient;
+
 
 
   beforeEach(async () => {
@@ -32,7 +36,8 @@ describe('RegistroComponent', () => {
       declarations: [ RegistroComponent ],
       imports: [
         HttpClientTestingModule
-      ]
+      ],
+      providers: [RegistroService, HttpClient],
     })
     .compileComponents();
   });
@@ -41,6 +46,8 @@ describe('RegistroComponent', () => {
     fixture = TestBed.createComponent(RegistroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    service = TestBed.get(RegistroService);
+    mockService = new mockRegistro(http);
   });
 
 
@@ -49,7 +56,7 @@ describe('RegistroComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
+/*
   it("prueba registro",()=>{
     
     reg={
@@ -71,33 +78,45 @@ describe('RegistroComponent', () => {
     reg.contrasenia=''
     expect(component.Enviar(reg)).toBeUndefined()
 
-  });
+  });*/
 
   
-  it('prueba de Registro',
-    inject([HttpTestingController, RegistroService],
-      (httpMock: HttpTestingController, service: RegistroService) => {
-        // We call the service
-        service.EnviarRegistro(reg).subscribe(data => {
-          let nuevo:any=data;
-          expect(nuevo.codigo).toBe(123);
-          
-        });
+  it('prueba de Registro 2',()=>{
+    component = new RegistroComponent(mockService);
+    /*component.transacciones = [];
+    component.id_usuario = user.id_cuenta;
+    let resultado;*/
+    
+    reg2={
+      nombre:"juan alberto",
+      apellido:"lopez barrera",
+      dpi:7894949,
+      cuenta:78499494654,
+      saldo:7842,
+      correo:'mario@gmail.com',
+      contrasenia:"45fds"
+    };
 
-        const req = httpMock.expectOne('http://localhost:3000/registro');
-        expect(req.request.method).toEqual('POST');
-        reg={
-          nombre:"juan alberto",
-          apellido:"lopez barrera",
-          dpi:7894949,
-          cuenta:78499494654,
-          saldo:7842,
-          correo:'mario@gmail.com',
-          contrasenia:"45fds"
-        };
-        req.flush({ reg});
 
-      })
+    reg2.nombre=''
+    reg2.apellido=''
+    reg2.dpi=0
+    reg2.cuenta=0
+    reg2.saldo=0
+    reg2.correo=''
+    reg2.contrasenia=''
+    
+/*
+  
+      expect(service.EnviarRegistro(reg2).subscribe(
+          result=>{
+            expect(component.codigo).toBeTruthy();
+            
+          }
+      ));*/
+    
+      expect(component.Enviar(reg2)).toBeUndefined()
+  }
   );
 
 
