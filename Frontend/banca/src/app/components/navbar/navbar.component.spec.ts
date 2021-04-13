@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { LoginComponent } from '../login/login.component';
 
 import { NavbarComponent } from './navbar.component';
 
@@ -8,9 +10,10 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule.withRoutes([
+        { path: 'Login', component: LoginComponent }])]
+      ,declarations: [NavbarComponent],}
+    ).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +24,10 @@ describe('NavbarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Validar empty en dato usuario - 1', () => {
+    component.usuario = "123"
+    expect(component.logout()).toBeUndefined();
   });
 });

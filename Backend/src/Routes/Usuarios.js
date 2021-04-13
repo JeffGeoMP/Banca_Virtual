@@ -13,10 +13,11 @@ const app = Router();
 app.post('/login', async (req, res) => {
 	try {
 		db.query(Consulta.VerificarUsuario(req.body.User, req.body.Pass), (err, data) => {
-			if (err) {
-				res.status(200).json(null);
-			} else {
-				res.status(200).json(data.rows);
+			if(data != undefined && data.rows.length == 1){
+				res.status(200).send(data.rows);
+
+			}else {
+				res.send(null);
 			}
 		});
 		
@@ -27,7 +28,7 @@ app.post('/login', async (req, res) => {
 			res.status(400).json();
 		}*/
 	} catch (error) {
-		res.send(null);
+		res.status(400).json(null);
 	}
 });
 
