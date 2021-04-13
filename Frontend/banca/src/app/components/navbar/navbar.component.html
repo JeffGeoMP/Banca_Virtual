@@ -14,7 +14,9 @@
           <li class="nav-item" routerLinkActive = 'active'>
             <a class="nav-link" href="/">Otro</a>
           </li>
-
+          <li class="nav-item" routerLinkActive = 'active'>
+            <a class="nav-link" [routerLink]="['Consulta']" tabindex="-1" aria-disabled="false" *ngIf="usuario">Saldo Actual</a>
+          </li>
           <li class="nav-item" routerLinkActive = 'active'>
             <a class="nav-link" [routerLink]="['reportes']" tabindex="-1" aria-disabled="false" *ngIf="usuario">Reportes</a>
           </li>
