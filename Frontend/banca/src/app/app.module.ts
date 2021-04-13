@@ -20,8 +20,7 @@ import { RegistroComponent } from './components/registro/registro.component';
     LoginComponent,
     ReportesComponent,
     ConsultaSaldoComponent,
-    NavbarComponent,
-    TransferenciaComponent
+    TransferenciaComponent,
     NavbarComponent,
     RegistroComponent
   ],

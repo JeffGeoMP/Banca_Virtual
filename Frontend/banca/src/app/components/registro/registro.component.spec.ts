@@ -8,14 +8,14 @@ import {Registro  } from "../../models/Task";
 import { of } from 'rxjs';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-class mockRegistro extends RegistroService {
+/*class mockRegistro extends RegistroService {
 
   EnviarRegistro(data:Registro) {
 
     return of({ "codigo":123 });
   }
 
-}
+}*/
 
 
 
@@ -26,7 +26,7 @@ describe('RegistroComponent', () => {
   let reg2:Registro;
 
   let service: RegistroService;
-  let mockService: mockRegistro;
+  //let mockService: mockRegistro;
   let http: HttpClient;
 
 
@@ -47,7 +47,7 @@ describe('RegistroComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     service = TestBed.get(RegistroService);
-    mockService = new mockRegistro(http);
+    //mockService = new mockRegistro(http);
   });
 
 
@@ -82,7 +82,7 @@ describe('RegistroComponent', () => {
 
   
   it('prueba de Registro 2',()=>{
-    component = new RegistroComponent(mockService);
+    //component = new RegistroComponent(mockService);
     /*component.transacciones = [];
     component.id_usuario = user.id_cuenta;
     let resultado;*/
