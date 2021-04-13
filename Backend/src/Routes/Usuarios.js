@@ -45,7 +45,7 @@ app.post('/registro', async (req, res) => {
 			if (err) {
 				res.status(200).json(null);
 			} else {
-				res.status(200).json({codigo:"codigo"+cuenta});
+				res.status(200).json({codigo:123});
 			}
 		});
 		

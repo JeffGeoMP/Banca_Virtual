@@ -10,14 +10,14 @@ import { RegistroService } from 'src/app/services/registro.service';
 
 export class RegistroComponent implements OnInit {
 
-  constructor(public regServ:RegistroService) { }
+  constructor(private regServ:RegistroService) { }
 
   ngOnInit(): void {
   }
 
   devuelto:any;
-  codigo:number;
-  mensaje:string;
+  codigo:number=0;
+  mensaje:String='';
 
   mireg:Registro={ 
     nombre:'',
@@ -77,27 +77,27 @@ export class RegistroComponent implements OnInit {
                 if(reg.contrasenia==''){
                   tBien=false
                 }else{
-                  this.mensaje="El campo Contraseña no puede estar vacía"
+                 // this.mensaje="El campo Contraseña no puede estar vacía"
                 }
               }else{
-                this.mensaje="El campo Correo no es Admitido"
+               // this.mensaje="El campo Correo no es Admitido"
               }
             }else{
-              this.mensaje="El campo Saldo no puede ser 0 o vacío"  
+            //  this.mensaje="El campo Saldo no puede ser 0 o vacío"  
             }
           }else{
-            this.mensaje="El campo Cuenta no puede ser 0 o vacío"  
+            ///this.mensaje="El campo Cuenta no puede ser 0 o vacío"  
           }
 
         }else{
-          this.mensaje="El campo DPI no puede ser 0 o vacío" 
+          //this.mensaje="El campo DPI no puede ser 0 o vacío" 
         }
       }else{
-        this.mensaje="El campo Apellido no puede Estar Vacío" 
+       // this.mensaje="El campo Apellido no puede Estar Vacío" 
       }
 
     }else{
-        this.mensaje="El campo Nombre no puede Estar Vacío"  
+      //  this.mensaje="El campo Nombre no puede Estar Vacío"  
     }
 
   return tBien;

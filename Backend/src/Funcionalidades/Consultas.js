@@ -7,7 +7,7 @@ class Consultas{
     }
 
     Registrar(nom,ap,dpi,cuen,suel,corr,contra){
-        return `Insert into Usuario(id_cuenta,nombres,apellidos,dpi,saldo,correo,pass) Values('${cuen}',${nom},${ap},${dpi},${suel},${corr},${contra})`;
+        return `Insert into Usuario(id_cuenta,nombres,apellidos,dpi,saldo,correo,pass) Values('${cuen}','${nom}','${ap}',${dpi},${suel},'${corr}','${contra}')`;
     }
 
 }
