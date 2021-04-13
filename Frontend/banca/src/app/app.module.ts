@@ -11,14 +11,16 @@ import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
 import { ConsultaSaldoComponent } from './components/consulta-saldo/consulta-saldo.component';
+import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavbarComponent,
     ReportesComponent,
     ConsultaSaldoComponent
+    NavbarComponent,
+    TransferenciaComponent
   ],
   imports: [
     BrowserModule,
