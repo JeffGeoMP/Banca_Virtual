@@ -32,4 +32,33 @@ app.post('/login', async (req, res) => {
 });
 
 
+app.post('/registro', async (req, res) => {
+	try {
+		let nombre=req.body.nombre;
+		let apellido=req.body.apellido;
+		let dpi=req.body.dpi;
+		let cuenta=req.body.cuenta;
+		let saldo=req.body.saldo;
+		let correo=req.body.correo;
+		let contrasenia=req.body.contrasenia;
+		db.query(Consulta.Registrar(nombre,apellido,dpi,cuenta,saldo,correo,contrasenia), (err, data) => {
+			if (err) {
+				res.status(200).json(null);
+			} else {
+				res.status(200).json({codigo:"codigo"+cuenta});
+			}
+		});
+		
+		/*console.log(Metadata.rows)
+		if (Metadata.rowCount > 0) {
+			res.status(200).json(Metadata.rows);
+		} else {
+			res.status(400).json();
+		}*/
+	} catch (error) {
+		res.send(null);
+	}
+});
+
+
 module.exports = app;

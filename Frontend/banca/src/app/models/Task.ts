@@ -8,6 +8,14 @@ export interface Usuario{
     pass:String;
 }
 
-
+export interface Registro{
+    nombre:string;
+    apellido:string;
+    dpi:number;
+    cuenta:number;
+    saldo:number;
+    correo:string;
+    contrasenia:string;
+}
 
 
