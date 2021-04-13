@@ -9,14 +9,22 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+<<<<<<< HEAD
 import { ReportesComponent } from './components/reportes/reportes.component';
+=======
+import { ConsultaSaldoComponent } from './components/consulta-saldo/consulta-saldo.component';
+>>>>>>> develop
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavbarComponent,
+<<<<<<< HEAD
     ReportesComponent
+=======
+    ConsultaSaldoComponent
+>>>>>>> develop
   ],
   imports: [
     BrowserModule,

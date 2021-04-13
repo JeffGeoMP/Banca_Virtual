@@ -17,7 +17,15 @@ export class ConectionService {
     return this.http.post(url, data);
   }
 
+<<<<<<< HEAD
   getTransacciones(id:Number):Observable<Transaccion[]>{
     return this.http.get<Transaccion[]>(`${this.dir}/transacciones/${id}`);
   }
+=======
+  ConsultarSaldo(User:String){
+    let url1 = 'http://localhost:3000/usuario/saldo/'+User;
+    return this.http.get(url1);
+}
+
+>>>>>>> develop
 }
