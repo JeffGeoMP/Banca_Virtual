@@ -29,6 +29,10 @@ class Consultas{
     inserttransfer(fecha,monto,idemisor,idreceptor){
         return `INSERT INTO Transferencia(fecha,monto,id_emisor,id_receptor) VALUES('${fecha}','${monto}','${idemisor}','${idreceptor}');`
     }
+    Registrar(nom,ap,dpi,cuen,suel,corr,contra){
+        return `Insert into Usuario(id_cuenta,nombres,apellidos,dpi,saldo,correo,pass) Values('${cuen}','${nom}','${ap}',${dpi},${suel},'${corr}','${contra}')`;
+    }
+
 }
 
 module.exports = {Consultas}

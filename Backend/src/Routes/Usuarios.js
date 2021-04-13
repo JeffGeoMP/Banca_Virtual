@@ -92,5 +92,33 @@ app.get('/usuario/saldo/:idUsu', async (req, res)=>{
 });
 
 
+app.post('/registro', async (req, res) => {
+	try {
+		let nombre=req.body.nombre;
+		let apellido=req.body.apellido;
+		let dpi=req.body.dpi;
+		let cuenta=req.body.cuenta;
+		let saldo=req.body.saldo;
+		let correo=req.body.correo;
+		let contrasenia=req.body.contrasenia;
+		db.query(Consulta.Registrar(nombre,apellido,dpi,cuenta,saldo,correo,contrasenia), (err, data) => {
+			if (err) {
+				res.status(200).json({error:err});
+			} else {
+				res.status(200).json({codigo:"193"+cuenta+"578911"});
+			}
+		});
+		
+		/*console.log(Metadata.rows)
+		if (Metadata.rowCount > 0) {
+			res.status(200).json(Metadata.rows);
+		} else {
+			res.status(400).json();
+		}*/
+	} catch (error) {
+		res.send({error:error});
+	}
+});
+
 
 module.exports = app;

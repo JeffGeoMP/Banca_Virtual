@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
 import {ConsultaSaldoComponent} from './components/consulta-saldo/consulta-saldo.component';
 import {TransferenciaComponent} from './components/transferencia/transferencia.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'transferencia',
     component: TransferenciaComponent
+  },
+  {
+    path:'registro',
+    component:RegistroComponent
   },
   {
     path: '**',

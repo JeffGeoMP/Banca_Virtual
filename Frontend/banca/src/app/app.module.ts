@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
 import { ConsultaSaldoComponent } from './components/consulta-saldo/consulta-saldo.component';
 import { TransferenciaComponent } from './components/transferencia/transferencia.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { TransferenciaComponent } from './components/transferencia/transferencia
     ConsultaSaldoComponent,
     NavbarComponent,
     TransferenciaComponent
+    NavbarComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
