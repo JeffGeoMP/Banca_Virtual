@@ -18,12 +18,10 @@ export class ConsultaSaldoComponent implements OnInit {
   constructor(private conexion: ConectionService) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('Usuario')===null){
-      
-   }else{
+
      let Tas= localStorage.getItem('Usuario');
      this.usuario= JSON.parse(Tas||'{}'); 
-   }
+   
    this.Consultar(this.usuario[0].id_cuenta);
   }
 

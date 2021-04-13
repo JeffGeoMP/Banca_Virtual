@@ -17,12 +17,6 @@ export class ConectionService {
 
   ConsultarSaldo(User:String){
     let url1 = 'http://localhost:3000/usuario/saldo/'+User;
-    console.log(url1);
-    if(this.http.get(url1)){
-      console.log("si");
-    }else{
-      console.log("no");
-    }
     return this.http.get(url1);
 }
 
