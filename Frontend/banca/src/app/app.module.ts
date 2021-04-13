@@ -18,7 +18,7 @@ import { TransferenciaComponent } from './components/transferencia/transferencia
     AppComponent,
     LoginComponent,
     ReportesComponent,
-    ConsultaSaldoComponent
+    ConsultaSaldoComponent,
     NavbarComponent,
     TransferenciaComponent
   ],

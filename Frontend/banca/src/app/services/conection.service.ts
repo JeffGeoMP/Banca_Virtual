@@ -23,6 +23,7 @@ export class ConectionService {
   ConsultarSaldo(User:String){
     let url1 = 'http://localhost:3000/usuario/saldo/'+User;
     return this.http.get(url1);
+  }
 
   transferencia(data){
     let url = `${this.dir}/transferencia`
@@ -31,4 +32,4 @@ export class ConectionService {
 
 }
 
-}
+
