@@ -22,7 +22,7 @@ class mockReporte extends ConectionService {
   }
 }
 
-fdescribe('ReportesComponent', () => {
+describe('ReportesComponent', () => {
   let fixture: ComponentFixture<ReportesComponent>;
   let component: ReportesComponent;
   let service: ConectionService;

@@ -21,7 +21,7 @@ class mockTransaccion extends ConectionService{
 }
 
 
-fdescribe('TransferenciaComponent', () => {
+describe('TransferenciaComponent', () => {
   let component: TransferenciaComponent;
   let fixture: ComponentFixture<TransferenciaComponent>;
   let service: ConectionService;
