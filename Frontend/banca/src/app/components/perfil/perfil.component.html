@@ -1,0 +1,105 @@
+
+
+
+<div class="card text-white bg-dark" align='center' style="width: auto; margin: auto auto; margin-top: 10px;">
+    <div class="card-header"><h2>Perfil de Cliente</h2></div>
+    <div class="card-body">
+        <div class="col-md-7 col-lg-8">
+            <form class="needs-validation" novalidate>
+              <div class="row g-3">
+
+                <!--
+                <div class="col-sm-12">
+                  <label for="Id_Empleado" class="form-label">ID</label>
+                  <input type="number" [(ngModel)]="Id_Empleado" [ngModelOptions]="{standalone: true}" class="form-control" id="firstName" placeholder="id" value="" disabled>
+                </div>
+                -->
+
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">Nombre</label>
+                  <input disabled type="text" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}" class="form-control" id="firstName" placeholder="Juan" value="" required>
+                  <div class="invalid-feedback">
+                    Nombre no valido
+                  </div>
+                </div>
+
+                <div class="col-6">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input disabled type="text" [(ngModel)]="apellido" [ngModelOptions]="{standalone: true}" class="form-control" id="apellido" placeholder="Bartomeu" required>
+                    <div class="invalid-feedback">
+                        Apellido no valido
+                    </div>
+                </div>
+        
+                <div class="col-12">
+                    <label for="dpi" class="form-label">DPI</label>
+                    <input disabled type="number" [(ngModel)]="dpi" [ngModelOptions]="{standalone: true}" class="form-control" id="telefono" placeholder="12345678" required>
+                    <div class="invalid-feedback">
+                        DPI no valido
+                    </div>
+                </div>
+        
+                <div class="col-12">
+                    <label for="cuenta" class="form-label">Cuenta</label>
+                    <input disabled type="number" [(ngModel)]="cuenta" [ngModelOptions]="{standalone: true}" class="form-control" id="telefono" placeholder="12345678" required>
+                    <div class="invalid-feedback">
+                        Cuenta no valido
+                    </div>
+                </div>
+        
+                <div class="col-12">
+                    <label for="saldo" class="form-label">Saldo</label>
+                    <input disabled type="number" [(ngModel)]="saldo" [ngModelOptions]="{standalone: true}" class="form-control" id="telefono" placeholder="12345678" required>
+                    <div class="invalid-feedback">
+                        Saldo no valido
+                    </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="email" class="form-label">Email</label>
+                  <input disabled type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="you@example.com" required>
+                  <div class="invalid-feedback">
+                    Email no valido
+                  </div>
+                </div>
+        
+                <!--
+                <div class="col-12">
+                    <p>INGRESE LA CONTRASEÑA PARA VALIDAR</p>
+                    <label for="pass1" class="form-label">Contraseña</label>
+                    <input type="password" [(ngModel)]="pass1" [ngModelOptions]="{standalone: true}" class="form-control" id="pass1" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Contraseña no valida
+                    </div>
+                </div>
+
+                
+                <div class="col-12">
+                  <label for="tipo" class="form-label">Tipo Usuario</label>
+                  <select class="form-select" [(ngModel)]="tipo" [ngModelOptions]="{standalone: true}" id="tipo" required>
+                    <option value="">Escoger...</option>
+                    <option>Administrador</option>
+                    <option>Usuario</option>
+                    <option>Empleado</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Seleccion no valida.
+                  </div>
+                </div>
+
+                <!--
+                <div class="col-12">
+                  <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+                  <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                </div>
+                !-->
+        
+              </div>
+        
+              <hr class="my-4">
+        
+            </form>
+              
+        </div>
+    </div>
+  </div>
