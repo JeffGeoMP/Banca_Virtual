@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
     if(localStorage.getItem("Usuario") == null){
       this.usuario = false;
     }else{
-      this.usuario = true
+      this.usuario = true;
     }
   }
 

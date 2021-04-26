@@ -8,6 +8,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { Router } from '@angular/router';
 import { Usuario } from '../../models/Task';
+import { PerfilComponent } from '../perfil/perfil.component';
 
 class mockLogin extends ConectionService {
 
@@ -28,7 +29,8 @@ describe('LoginComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes([
-        { path: '', pathMatch: 'full', redirectTo: '' }])
+        { path: '', pathMatch: 'full', redirectTo: '' },
+        { path:'Perfil', component:PerfilComponent }])
         , HttpClientModule]
       ,declarations: [LoginComponent],}
     ).compileComponents();

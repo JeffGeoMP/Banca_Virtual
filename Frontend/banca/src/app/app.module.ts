@@ -13,6 +13,7 @@ import { ReportesComponent } from './components/reportes/reportes.component';
 import { ConsultaSaldoComponent } from './components/consulta-saldo/consulta-saldo.component';
 import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RegistroComponent } from './components/registro/registro.component';
     ConsultaSaldoComponent,
     TransferenciaComponent,
     NavbarComponent,
-    RegistroComponent
+    RegistroComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

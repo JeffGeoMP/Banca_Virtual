@@ -12,7 +12,7 @@
           </li>
 
           <li class="nav-item" routerLinkActive = 'active'>
-            <a class="nav-link" href="/transferencia">Transferencia</a>
+            <a class="nav-link" href="/transferencia" *ngIf="usuario">Transferencia</a>
           </li>
           <li class="nav-item" routerLinkActive = 'active'>
             <a class="nav-link" [routerLink]="['Consulta']" tabindex="-1" aria-disabled="false" *ngIf="usuario">Saldo Actual</a>
@@ -21,19 +21,22 @@
             <a class="nav-link" [routerLink]="['reportes']" tabindex="-1" aria-disabled="false" *ngIf="usuario">Reportes</a>
           </li>
 
-          <li class="nav-item" >
+          <!--<li class="nav-item" >
             <a class="nav-link" routerLink="/registro">Registrar</a>
-          </li>
+          </li>-->
           
           
         </ul>
 
         <ul class="navbar-nav me-rg mb-2 mb-lg-0">
           <li class="nav-item" routerLinkActive = 'active'>
+            <a class="nav-link" [routerLink]="['Perfil']" tabindex="-1" aria-disabled="false" *ngIf="usuario">Perfil</a>
+          </li>
+          <li class="nav-item" routerLinkActive = 'active'>
             <a class="nav-link" [routerLink]="['Login']" tabindex="-1" aria-disabled="false" *ngIf="!usuario">Login</a>
           </li>
           <li class="nav-item" routerLinkActive = 'router-link-active'>
-            <a class="nav-link" href="/" *ngIf="!usuario">Sign up</a>
+            <a class="nav-link" [routerLink]="['registro']" *ngIf="!usuario">Sign up</a>
           </li>
           <li class="nav-item" routerLinkActive = 'router-link-active'>
           </li>
