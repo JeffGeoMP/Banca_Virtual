@@ -21,7 +21,7 @@ class mockTransaccion extends ConectionService{
 }
 
 
-fdescribe('TransferenciaComponent', () => {
+describe('TransferenciaComponent', () => {
   let component: TransferenciaComponent;
   let fixture: ComponentFixture<TransferenciaComponent>;
   let service: ConectionService;
@@ -72,6 +72,7 @@ fdescribe('TransferenciaComponent', () => {
     localStorage.setItem("Usuario",JSON.stringify(user));
 
     component.obtener_usuario();
+    //expect(component.obtener_usuario()).toBeTruthy();
 
     expect(component.id_usuarioemisor).toEqual(user.id_cuenta);
     expect(component.nombreemisor).toEqual(user.nombres);

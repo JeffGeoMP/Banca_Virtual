@@ -5,6 +5,7 @@ import { ReportesComponent } from './components/reportes/reportes.component';
 import {ConsultaSaldoComponent} from './components/consulta-saldo/consulta-saldo.component';
 import {TransferenciaComponent} from './components/transferencia/transferencia.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 const routes: Routes = [
   {
@@ -22,9 +23,13 @@ const routes: Routes = [
     component:RegistroComponent
   },
   {
+    path:'Perfil',
+    component:PerfilComponent
+  },
+  {
     path: '**',
     pathMatch: 'full',
-    redirectTo: ''
+    redirectTo: 'Login'
   }
 ];
 

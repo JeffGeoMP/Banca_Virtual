@@ -12,7 +12,11 @@ export class LoginComponent implements OnInit {
   usuario;
   pass;
 
-  constructor(private router: Router, private conexion: ConectionService) { }
+  constructor(private router: Router, private conexion: ConectionService) {
+    if(localStorage.getItem("Usuario") != null){
+      this.router.navigate(['Perfil']);
+    }
+  }
 
   ngOnInit(): void {
   }
@@ -32,7 +36,7 @@ export class LoginComponent implements OnInit {
         if (res != null) {
           localStorage.setItem("Usuario", JSON.stringify(res[0]));
           alert("Datos correctos");
-          this.router.navigate(['/']);
+          this.router.navigate(['Perfil']);
         } else {
           alert("Datos erroneos");
         }
