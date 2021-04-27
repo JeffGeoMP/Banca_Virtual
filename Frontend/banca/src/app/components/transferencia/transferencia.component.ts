@@ -36,7 +36,7 @@ export class TransferenciaComponent implements OnInit {
       if(res != null){
         alert("Transferencia exitosa");
       }else{
-        alert("Transferencia fallida");
+        //alert("Transferencia fallida");
       }
     });
   }

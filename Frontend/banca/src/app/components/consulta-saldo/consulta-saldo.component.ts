@@ -31,8 +31,6 @@ export class ConsultaSaldoComponent implements OnInit {
        this.saldo=this.Datos1.saldo;
        this.nombre=this.Datos1.nombres;
        this.apellido=this.Datos1.apellidos;
-     },(error:any)=>{
-       console.error(error);
      });
   }
 
