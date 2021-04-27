@@ -32,6 +32,20 @@ app.post('/login', async (req, res) => {
 	}
 });
 
+
+app.get('/usuario/saldo/:idUsu', async (req, res)=>{
+	try {
+		const Metadata = await db.query(Consulta.ConsultarSaldo(req.params.idUsu));
+	
+		if(Metadata.rowCount > 0){
+			res.status(200).json(Metadata.rows);
+		}else{
+			res.status(400).json();
+		}
+	} catch (error) {
+		res.status(500).send(error);
+	}
+	});
 app.get('/transacciones/:id', async(req, res)=>{
 	try {
 		db.query(Consulta.transacciones(req.params.id), (err, data) => {
@@ -70,20 +84,6 @@ app.post('/transferencia',async (req,res) => {
 				});
 			}
 		});
-
-app.get('/usuario/saldo/:idUsu', async (req, res)=>{
-	try {
-		const Metadata = await db.query(Consulta.ConsultarSaldo(req.params.idUsu));
-	
-		if(Metadata.rowCount > 0){
-			res.status(200).json(Metadata.rows);
-		}else{
-			res.status(400).json();
-		}
-	} catch (error) {
-		res.status(500).send(error);
-	}
-	});
 
 
 	} catch (error){

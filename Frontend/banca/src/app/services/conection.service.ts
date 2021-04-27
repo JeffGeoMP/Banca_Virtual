@@ -21,7 +21,7 @@ export class ConectionService {
     return this.http.get<Transaccion[]>(`${this.dir}/transacciones/${id}`);
   }
   ConsultarSaldo(User:String){
-    let url1 = 'http://localhost:3000/usuario/saldo/'+User;
+    let url1 = `${this.dir}/usuario/saldo/`+User;
     return this.http.get(url1);
   }
 

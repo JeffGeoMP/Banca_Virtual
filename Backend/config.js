@@ -9,8 +9,8 @@ const db = new Pool({
     password: 'password',     //Contraseña de usuario
     // @manases = password
     // @miguel = 30668231
-   database: 'practica3y4'      //base de datos
-    //database: 'Practica3y4'      //base de datos
+  // database: 'practica3y4'      //base de datos
+    database: 'Practica3y4'      //base de datos
 });
 
 module.exports = db;
